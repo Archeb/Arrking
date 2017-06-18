@@ -1,0 +1,36 @@
+{
+    "name": "Arrking",
+    "description": "一个响应式的简洁单栏大图主题",
+    "demo": "https://qwq.moe/",
+    "version": "1.2.0",
+    "engines": {
+        "ghost": ">=0.9.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Archeb",
+        "email": "archebasic@hotmail.com",
+        "url": "https://qwq.moe/"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Archeb/Arrking.git"
+    },
+    "bugs": "https://github.com/Archeb/Arrking/issues",
+    "contributors": "https://qwq.moe/"
+}

@@ -1,0 +1,283 @@
+{{!< header}}
+	<div class="cover">
+		<div class="_actions">
+			<a href="{{@blog.url}}"><img style="margin-top:9.5px" class="user-avatar-small _item" id="site_logo" src="{{@blog.logo}}"></a>
+			{{navigation}}
+			<a href="https://github.com/Archeb"><i class="fa fa-github _item _item_right" aria-hidden="true"></i></a>
+			<a href="mailto:archebasic@hotmail.com"><i class="fa fa-envelope _item _item_right" aria-hidden="true"></i></a>
+			<!-- 更多图标请参阅FontAwesome -->
+		</div>
+		<div class="_bottom_actions">
+		    <div class="_down"></div>
+			<div class="_copyright _item"><i class="fa fa-copyright" aria-hidden="true"></i> Theme Arrking Made By Archeb</div>
+			<div class="_copyright _item_right">Archeb's Blog 2014 - 2017 新年快乐</div>
+			<i class="fa fa-github _item _links" aria-hidden="true"></i>
+			<i class="fa fa-qq _item _links" aria-hidden="true"></i>
+			<i class="fa fa-envelope _item _links" aria-hidden="true"></i>
+			<i class="fa fa-telegram _item _links" aria-hidden="true"></i>
+		</div>
+		<div class="pjax-loader-bar">
+    	    <div class="progress" id="ProgressBar"></div>
+    	</div>
+		<div id="CoverImg" class="_img" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}></div>
+	</div>
+
+
+	<div class="header" id="header">
+		<div class="_title" id="blog_title">{{@blog.title}}</div>
+		<div class="_description" id="blog_description">{{meta_description}}</div>
+	</div>
+    <!-- 以下内容仅为搜索引擎索引输出 不带样式，浏览器不渲染 -->
+    <div class="for-seo">
+        {{#foreach posts}}
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+            </section>
+            <footer class="post-meta">
+                {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="{{author.name}}" nopin="nopin" />{{/if}}
+                {{author}}
+                {{tags prefix=" on "}}
+                <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+            </footer>
+        </article>
+        {{/foreach}}
+        {{pagination}}
+
+    </div>
+	<body>
+		<div id="post_list">
+		</div>
+		<div class="friends shadow-in">
+		    <div class="_title">朋友们</div>
+		    <div class="container">
+		        <a href="https://moe.sh/">
+		            <div class='_friend_item'>
+    		            <img class="_avatar" align="center" data-original="https://cdn.v2ex.com/gravatar/26a052bf12258423b116961f6045d389?s=150">
+    		            <div class="_introduction">
+    		                <p>太太，是一个女装大佬</p>
+    		                <p>擅长PHP和渗透,点此围观女装</p>
+    		            </div>
+    		        </div>
+		        </a>
+		        <a href="https://www.angelic47.com/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="{{asset "img/47avatar.jpg"}}">
+    		            <div class="_introduction">
+    		                <p>天使姐姐是位不胜酒力的少女</p>
+    		                <p>传说她喝多了之后能抱起来啪</p>
+    		            </div>
+    		        </div>
+    	        </a>
+    	        <a href="https://bobiji.com/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="{{asset "img/boboavatar.jpg"}}">
+    		            <div class="_introduction">
+    		                <p>bobo酱是位绅♂士，阅本无数</p>
+    		                <p>在运维和代码方面也非常厉害</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://www.littleqiu.net/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://cdn.v2ex.com/gravatar/9deed2ba8376f9873da9e3e0db3b97a2?s=150">
+    		            <div class="_introduction">
+    		                <p>DreamCity</p>
+    		                <p>迷惘少年的梦想世界</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="http://maplex.cc/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://cdn.v2ex.com/gravatar/64da9f44b83924ed7863d52644f3e14f?s=150">
+    		            <div class="_introduction">
+    		                <p>FresouL</p>
+    		                <p>美工设计+PS大佬MAMA</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://satori.moe/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://cdn.v2ex.com/gravatar/137164b253f867e9bf5503b4c050c78e?s=150">
+    		            <div class="_introduction">
+    		                <p>帮我关下灯，我去睡Satori了</p>
+    		                <p>也是个女装大佬哦</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://slz.moe">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="{{asset "img/slzavatar_R.jpg"}}">
+    		            <div class="_introduction">
+    		                <p>树林子's Blog</p>
+    		                <p>不知道写点啥233</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://imjad.cn">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://cdn.v2ex.com/gravatar/1f1b82f7ab1429a50424ac18dce65e37?s=150">
+    		            <div class="_introduction">
+    		                <p>AD's Blog</p>
+    		                <p>AD大佬的博客</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://www.haotown.cn/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://sucimg.itc.cn/avatarimg/170474159_1405002751230_c150">
+    		            <div class="_introduction">
+    		                <p>皓城HAOTOWN</p>
+    		                <p>带哥的博客 CodeKnitter的大佬</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://blog.berd.moe/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://cdn.v2ex.com/gravatar/1fa4149ce99f941a8add595687634141?s=150">
+    		            <div class="_introduction">
+    		                <p>FENGberd's Blog</p>
+    		                <p>风鸟姐姐的博客(可爱的大佬)</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://ricterz.me/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="{{asset "img/ricterz.jpg"}}">
+    		            <div class="_introduction">
+    		                <p>初心を忘れず</p>
+    		                <p>A3G的rr大佬</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="http://9bie.org/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="{{asset "img/9bie.jpg"}}">
+    		            <div class="_introduction">
+    		                <p>⑨BIE</p>
+    		                <p>伪技术宅的迷之地</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://moeloli.pw/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://cdn.v2ex.com/gravatar/7be057080f580a672dc1eb25564526bd?s=150">
+    		            <div class="_introduction">
+    		                <p>Malindex</p>
+    		                <p>NULL</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://www.grainbear.cn/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="{{asset "img/grainbear.cn.jpg"}}">
+    		            <div class="_introduction">
+    		                <p>GrainBear的萌窝</p>
+    		                <p>A3G群里很萌的大佬</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://www.cloudmoe.com/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://cdn.v2ex.com/gravatar/6fb004351f7f5c8fa862f9e0cb9e5439?s=150">
+    		            <div class="_introduction">
+    		                <p>云萌网络 CloudMoe</p>
+    		                <p>TG桑的项目,他貌似没有博客呢</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://punchcode.github.io/punchcode/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="{{asset "img/PUNCHCODE.png"}}">
+    		            <div class="_introduction">
+    		                <p>PUNCHCODE</p>
+    		                <p>代码不是打出来的,是揍出来的</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://xiaolin.in/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://q.qlogo.cn/qqapp/100229475/B3F0051864AAA9698536C6DD8F0B2C7F/100">
+    		            <div class="_introduction">
+    		                <p>小霖的博客</p>
+    		                <p>又一个渣渣的日常站点</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="http://www.lxy12138.com/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original=""{{asset "img/lewis.png"}}">
+    		            <div class="_introduction">
+    		                <p>lewis' blog</p>
+    		                <p>一个梦想考NOI的渣渣</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://www.ikmoe.com/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://www.ikmoe.com/wp-img/2016/10/ikmoe_2017-03-19_14-13-57.jpg">
+    		            <div class="_introduction">
+    		                <p>月宅酱</p>
+    		                <p>世界第一的哔哩哔哩放电博客</p>
+    		            </div>
+    		        </div>
+    		    </a>
+    		    <a href="https://www.xzzte.cn/">
+    		        <div class='_friend_item'>
+    		            <img class="_avatar" data-original="https://img.mcwlsd.com/zy/tx.jpg">
+    		            <div class="_introduction">
+    		                <p>小站杂谈</p>
+    		                <p>一个迷の地方</p>
+    		            </div>
+    		        </div>
+    		    </a>
+		    </div>
+		</div>
+
+<script src="{{asset "js/jquery.js"}}" type="text/javascript"></script>
+<script src="{{asset "js/jquery.lazyload.min.js"}}" type="text/javascript"></script>
+<script src="{{asset "js/main.js"}}" type="text/javascript" charset="utf-8"></script>
+<script src="{{asset "js/coverChanger.js"}}" type="text/javascript" charset="utf-8"></script>
+<script>var duoshuoQuery = {short_name:"localtestarcheb"};</script>
+<script src="{{asset "js/embed.js"}}" type="text/javascript" charset="utf-8"></script>
+<script>
+    //lazyload support
+    $("img._avatar").lazyload();
+
+	$(document).ready(function(){
+    $.ajax({
+        url:ghost.url.api('posts',{limit: 5}),
+        type:'GET',
+        async:true,    //或false,是否异步
+        data:{
+            //并不需要请求数据
+        },
+        timeout:5000,    //超时时间
+        dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+        success:function(data,textStatus,jqXHR){
+            //Ghost版本的博客信息直接渲染
+            //循环添加文章列表
+            for(var pid in data.posts){
+                var post=data.posts[pid];
+                (pid%2==0) ? addPost(post,Template_Right,true) : addPost(post,Template_Left,true);
+            }
+			//分析分页信息看看还有没有多的
+            if(data.meta.pagination.page < data.meta.pagination.pages){
+                //显示加载更多
+                var ContinueElement=$(Template_Continue);
+                ContinueElement.attr('onclick','loadMorePage(' + (parseInt(data.meta.pagination.page) + 1) + ')');
+                $("#post_list").find('.post:last').append(ContinueElement);
+            }
+            $('.post_lazyload_img').lazyload();
+        },
+        error:function(xhr,textStatus){
+            alert('加载失败');
+        }
+    })
+})
+
+</script>
+</html>

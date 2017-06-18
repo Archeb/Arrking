@@ -1,0 +1,48 @@
+<style>
+.post ._cover ._img {
+	background-image:url({{asset "img/post-cover2.jpg"}});
+}
+</style>
+<!DOCTYPE html>
+<html>
+
+
+	<head>
+		<meta charset="utf-8" />
+		<title id="site_title">{{meta_title}}{{#is "post"}} - {{@blog.title}}{{/is}}</title>
+		<!--<link rel="stylesheet/less" type="text/css" href="{{asset "css/style.less"}}" />
+		<script src="{{asset "js/less.min.js"}}" type="text/javascript" charset="utf-8"></script>-->
+		
+		<link rel="stylesheet" type="text/css" href="{{asset "css/style.min.css"}}"/>
+		<link rel="stylesheet" type="text/css" href="{{asset "css/grid.css"}}" />
+		<link rel="stylesheet" type="text/css" href="{{asset "css/duoshuo.css"}}" />
+		<link rel="stylesheet" type="text/css" href="{{asset "css/animate.css"}}"/>
+		<link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	</head>
+	
+	{{ghost_head}}
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    {{{body}}}
+
+    		<div class="footer">
+		    <div class="container">
+		        <div class="_text-left">
+		            <p>Archeb's Blog (贫困的蚊子) Copyright 2014 - 2017</p>
+		            <p>由Anodelic强力驱动 ｜ 自豪地采用Ghost</p>
+		        </div>
+		        <div class="_text-right">
+		            <p><a href="https://qwq.moe/">Theme Arrking Made By Archeb</a></p>
+		            <p>友情链接 ｜ 关于我 ｜ 随机文章</p>
+	            </div>
+		    </div>
+		</div>
+	</body>
+{{ghost_foot}}
